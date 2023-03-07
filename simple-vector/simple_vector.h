@@ -252,7 +252,7 @@ public:
     // Если перед вставкой значения вектор был заполнен полностью,
     // вместимость вектора должна увеличиться вдвое, а для вектора вместимостью 0 стать равной 1
     Iterator Insert(ConstIterator pos, const Type& value) {
-    assert(pos >= begin() && pos <= end());
+    assert(pos >= begin() && pos < end());
 
     size_t element = std::distance(cbegin(), pos);
     if (capacity_ == 0) {
